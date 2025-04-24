@@ -61,9 +61,10 @@ h2 { font-size: clamp(1.8rem, 5vw, 2.5rem); }
 h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-bg);
   text-decoration: none;
   transition: all 0.3s ease;
+  padding: var(--space-lg) var(--space-sm);
 }
 
 a:hover {
@@ -515,6 +516,31 @@ footer p {
   font-size: 1em;
   max-width: 800px;
   margin: 0 auto;
+}
+/* footer column UL: no bullets, center the whole list */
+.footer-column ul {
+  list-style: none;      /* remove the dots */
+  padding: 0;            /* kill the default indent */
+  margin: 0 auto;        /* center the UL block if it’s inline-block (or just reset margins) */
+  text-align: center;    /* center its contents */
+}
+
+/* each LI: keep them as their own lines, but centered */
+.footer-column ul li {
+  display: block;        /* one per line */
+  margin: 0.5em 0;       /* vertical spacing */
+}
+/* strip out the global padding on footer links and make their hit-box match the text */
+footer .footer-column ul li a {
+  display: inline-block;  /* so we can shrink-wrap the link text */
+  padding: 0;             /* kill the 4rem vertical padding from the global rule */
+  margin: 0.25em 0;       /* optional: a little breathing room between items */
+  cursor: pointer;        /* reinforce that it’s clickable */
+}
+/* moves the “2025 From Home to Homeland Exhibit” line further away */
+footer .copyright {
+  margin-top: var(--space-md); /* try var(--space-sm), --space-md, --space-lg, or a fixed rem */
+  color: var(--color-bg-alt)
 }
 
 /* 15. Enhanced Responsive Design */
